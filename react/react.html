@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+
+<div id="website"></div>
+<div id="link"></div>
+<div id="name"></div>
+<div id="likeButton"></div>
+<div id="helloMessage"></div>
+<h4 id="helloMsg"></h4>
+<script type="text/babel">
+    /*var HelloMessage = React.createClass({
+     render: function() {
+     //return <h1>Hello World！</h1>;
+     return <h1>Hello {this.props.name}</h1>;
+     }
+     });
+
+     ReactDOM.render(<HelloMessage name = "Rudddnoob"/>, document.getElementById('example')
+     );*/
+    var WebSite = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <Name name = {this.props.name}/>
+                    <Link site = {this.props.site}/>
+                </div>
+            );
+        }
+        }
+
+    );
+
+    var Name = React.createClass({
+        render: function () {
+            return (
+                <h1>{this.props.name}</h1>
+            );
+        }
+        }
+    );
+
+    var Link = React.createClass({
+        render: function() {
+            return (
+                <a href = {this.props.site}>
+                    {this.props.site}
+                </a>
+            );
+        }
+        }
+    );
+
+    React.render(<WebSite name = "菜鸟教程" site = "http://www.runoob.com"/>,
+        document.getElementById('website'));
+
+    React.render(<Name name = "chenwen"/>,
+        document.getElementById('name'));
+
+    React.render(<Link site = "http://ww.baidu.com"/>,
+        document.getElementById('link'));
+
+
+    var LikeButton = React.createClass({
+        getInitialState: function () {
+           return {liked: false};
+        },
+
+        handleClick: function (event) {
+            this.setState({liked: !this.state.liked});
+        },
+
+        render: function () {
+            var text = this.state.liked ? '喜欢' : '不喜欢';
+            return (
+                <p onClick = {this.handleClick}>
+                    你<b>{text}</b>我。点我切换状态。
+                </p>
+            );
+        }
+    });
+
+    React.render(<LikeButton/>, document.getElementById('likeButton'));
+
+    var HelloMessage = React.createClass({
+        render: function () {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+
+    ReactDOM.render(<HelloMessage name = "Runoob"/>,
+        document.getElementById('helloMessage'));
+
+    var HelloMsg = React.createClass({
+        getDefaultProps: function () {
+           return {
+               name: 'Runo888ob'
+           };
+        },
+
+        render: function () {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+
+    ReactDOM.render(<HelloMsg/>, document.getElementById('helloMsg'));
+</script>
+</body>
+</html>

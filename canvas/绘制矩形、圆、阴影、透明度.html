@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #myCanvas {
+            border: 1px solid #9c9898;
+            background-color: #77ffcc;
+        }
+
+    </style>
+
+    <script>
+     /*   window.onload = function () {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+ /!*           context.beginPath();
+            context.rect(10, 50, 200, 100);
+            context.lineWidth = 5;
+            context.strokeStyle = "#000000";
+            context.stroke();
+
+            context.fillStyle = "#00ff00";
+
+            //设置阴影
+            context.shadowColor = "#000000";
+            context.shadowBlur = 20;
+            context.shadowOffsetX = 10;
+            context.shadowOffsetY = 10;
+
+
+            context.fill();
+
+
+            //绘制圆
+
+            context.beginPath();
+            var centerX = canvas.width/1.5;
+            var centerY = canvas.height/2;
+
+            var raduis = 80;
+
+            context.arc(centerX, centerY, raduis, 0, 2*Math.PI, true);
+            context.lineWidth = 5;
+            context.strokeStyle = "#000000"
+            context.stroke();
+
+            context.fillStyle = "#8ed6ff"
+
+            //设置阴影
+            context.shadowColor = "#00ff00";
+            context.shadowBlur = 20;
+            context.shadowOffsetX = 10;
+            context.shadowOffsetY = 10;
+            context.globalAlpha = 0.5;
+
+            context.fill();*!/
+
+
+            //线性渐变的效果
+            var clg = context.createLinearGradient(0, 200 , 200, 200);
+            clg.addColorStop(0, "#ff0000");
+            clg.addColorStop(0.5, "#00ff00")
+            clg.addColorStop(1, "#0000ff")
+            context.fillStyle = clg;
+            context.strokeStyle = clg;
+            context.fillRect(10, 10, 200, 200);
+            context.fill();
+
+            //渐变
+
+            var crg = context.createRadialGradient(325, 100, 20, 325, 100, 80);
+
+            crg.addColorStop(0, "#ffffff");
+            crg.addColorStop(0.75, "#ff0000")
+            crg.addColorStop(1, "#000000")
+            context.fillStyle = crg;
+            context.strokeStyle = crg;
+            context.fillRect(230, 10, 200, 200);
+            context.fill();
+
+        }*/
+
+        function draw(type) {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height);
+            var img = document.getElementById("bufferfly");
+            var pat = ctx.createPattern(img, type);
+            ctx.rect(0, 0 , 500, 200);
+            ctx.fillStyle = pat;
+            ctx.fill();
+
+
+        }
+
+    </script>
+
+
+
+
+</head>
+<body>
+    <canvas id="myCanvas" width="700" height="700"></canvas>
+
+    <p>图像的使用。</p>
+    <img src="chenwen.jpg" id="bufferfly"/> <br/>
+
+    <button onclick="draw('repeat')">Repeat</button>
+    <button onclick="draw('repeat-x')">Repeat-x</button>
+    <button onclick="draw('repeat-y')">Repeat-y</button>
+    <button onclick="draw('no-repeat')">No-Repeat</button>
+
+<br/>
+
+
+
+
+</body>
+</html>

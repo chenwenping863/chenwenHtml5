@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script>
+        function startTime(){
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();// 在小于10的数字钱前加一个‘0’
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+            t=setTimeout(function(){startTime()},500);
+        }
+        function checkTime(i){
+            if (i<10){
+                i="0" + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+<body>
+
+<p id="demo"></p>
+<script>
+    var length;
+    length = 6;
+    document.getElementById("demo").innerHTML = length;
+</script>
+
+<script>
+    var txt = "Hello World!";
+    document.write(txt.length);
+</script>
+
+<script>
+    var txt = "Hello World!";
+    document.write("<p>字体变大: " + txt.big() + "</p>");
+    document.write("<p>字体缩小: " + txt.small() + "</p>");
+    document.write("<p>字体加粗: " + txt.bold() + "</p>");
+    document.write("<p>斜体: " + txt.italics() + "</p>");
+    document.write("<p>固定定位: " + txt.fixed() + "</p>");
+    document.write("<p>加删除线: " + txt.strike() + "</p>");
+    document.write("<p>字体颜色: " + txt.fontcolor("green") + "</p>");
+    document.write("<p>字体大小: " + txt.fontsize(6) + "</p>");
+    document.write("<p>下标: " + txt.sub() + "</p>");
+    document.write("<p>上标: " + txt.sup() + "</p>");
+    document.write("<p>链接: " + txt.link("http://www.w3cschool.cc") + "</p>");
+    document.write("<p>闪动文本: " + txt.blink() + " (不能用于IE,Chrome,或者Safari)</p>");
+</script>
+
+<p id="demo1">单击按钮来定位指定文本首次出现的位置。</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        var str="Hello world, welcome to the universe.";
+        var n=str.indexOf("welcome");
+        document.getElementById("demo1").innerHTML=n;
+    }
+</script>
+
+<script>
+    var str="Hello world!";
+    document.write(str.match("world") + "<br>");
+    document.write(str.match("World") + "<br>");
+    document.write(str.match("worlld") + "<br>");
+    document.write(str.match("world!"));
+</script>
+
+<p>单击按钮将段落中“Microsoft”替换成“W3CSchool”：</p>
+<p id="demo2">Visit Microsoft!</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        var str=document.getElementById("demo2").innerHTML;
+        var n=str.replace("Microsoft","W3CSchool");
+        document.getElementById("demo2").innerHTML=n;
+    }
+</script>
+
+
+<script>
+    var d=new Date();
+    document.write(d);
+</script>
+
+<p id="demo4">单击按钮显示1970年1月1号至今的毫秒数。</p>
+<button onclick="myFunction()">点我</button>
+<script>
+    function myFunction(){
+        var d = new Date();
+        var x = document.getElementById("demo4");
+        x.innerHTML=d.getTime();
+    }
+</script>
+<script>
+    var i;
+    var mycars = new Array();
+    mycars[0] = "Saab";
+    mycars[1] = "Volvo";
+    mycars[2] = "BMW";
+    for (i=0;i<mycars.length;i++){
+        document.write(mycars[i] + "<br>");
+    }
+</script>
+
+
+</body>
+</html>

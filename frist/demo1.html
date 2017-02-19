@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制直线</title>
+    <style>
+        #myCanvas {
+            border: 1px solid #9c9898;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+
+        window.onload() = function () {
+            var canvas = document.getElementById("mycanvas")
+            var context = canvas.getContext("2d");
+/*            context.fillStyle = "#ff0000"
+            context.fillRect(50, 25, 100, 50)*/
+
+            context.beginPath();
+            context.moveTo(200, canvas.height/2)
+            context.lineTo(canvas.width - 200, canvas.height/2);
+            context.lineWidth = 20;
+            context.strokeStyle = "#ff0000"
+            context.lineCap = "round"
+            context.stroke();
+        }
+
+    </script>
+</head>
+<body>
+    <canvas id="mycanvas" width="578" height="200"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DataRejust</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            document.getElementById("frm1").onsubmit= function () {
+                vad1 = this.d1.value;
+                vard2 = this.d2.value;
+                if()
+            }
+
+        }
+
+        functionVerifyDate(d)
+        {
+            vardatePattern = /^\d{4}-(0?[1-9]|1[0-2])-(0?[1-9]|[1-2]\d|3[0-1])$/;
+            return dataPattern.test(d);
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+    <form id="frm1" action="DataRejust.html" method="post">
+        <input type="text" name="d1"/>
+        <input type="text" name="d2"/>
+
+        <input type="submit"/>
+    </form>
+
+</body>
+</html>

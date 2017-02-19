@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>runoob.com</title>
+</head>
+
+<body>
+
+<p>typeof 操作符返回变量或表达式的类型</p>
+<p id="demo"></p>
+<script>
+    document.getElementById("demo").innerHTML =
+        typeof "join" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof false + "<br>" +
+        typeof [1, 2, 3, 4] + "<br>" +
+        typeof {name:'join', age:34};
+</script>
+<br>
+<br>
+
+<p> typeof 操作符返回变量、对象、函数、表达式的类型。</p>
+<p id="demo1"></p>
+<script>
+    document.getElementById("demo1").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1,2,3,4] + "<br>" +
+        typeof {name:'john', age:34} + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () {} + "<br>" +
+        typeof myCar + "<br>" +
+        typeof null;
+</script>
+<br>
+<br>
+
+<p> constructor 属性返回变量或对象的构造函数。</p>
+<p id="demo2"></p>
+<script>
+    document.getElementById("demo2").innerHTML =
+        "john".constructor + "<br>" +
+        (3.14).constructor + "<br>" +
+        false.constructor + "<br>" +
+        [1,2,3,4].constructor + "<br>" +
+        {name:'john', age:34}.constructor + "<br>" +
+        new Date().constructor + "<br>" +
+        function () {}.constructor;
+</script>
+
+<h1>我的第一个 Web 页面</h1>
+<p>
+    浏览器中(Chrome, IE, Firefox) 使用 F12 来启用调试模式， 在调试窗口中点击 "Console" 菜单。
+</p>
+<script>
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+</script>
+
+<h1>使用 "use strict":</h1>
+<h3>不允许使用以下这种语句。</h3>
+<p>浏览器按下 F12 开启调试模式，查看报错信息。</p>
+<script>
+    "use strict";
+    with (Math){x = cos(2)}; // 报错
+</script>
+
+
+</body>
+</html>

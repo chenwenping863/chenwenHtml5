@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Count</title>
+    <script type="text/javascript">
+        function chkForm(this) {
+            var value = this.d1.value;
+            var len = value.length;
+            for(var i =0; i &lt; len; i++){
+                if (value.charAt(i) > "9" || value.charAt(i) &lt; "0") {
+                    alert("含有非法数字字符");
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return chkForm(this)" action="1.html">
+        <input type="text" name="d1"/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>

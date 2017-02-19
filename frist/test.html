@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制图像</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #myCanvas {
+            border: 1px solid #9c9898;
+            background-color: #77ffcc;
+        }
+    </style>
+
+    <script>
+        function wrapText(context, text, x, y, maxWidth, lineHeight) {
+            var words = text.split(" ");
+            var line = "";
+            for (var n = 0; n < words.length; n++) {
+                var testline = line + words[n] + " ";
+                var metrics = context.measureText(testline)
+                var testWidth = metrics.width;
+                if (testWidth > maxWidth) {
+                    context.fillText(line, x, y)
+                    line = words[n] + " "
+                    y+= lineHeight;
+                } else {
+                    line = testline
+                }
+            }
+            context.fillText(line, x, y)
+        }
+
+
+        window.onload = function () {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+         /*   var imageObj = new Image();
+            imageObj.src = "test.jpg";
+            imageObj.onload = function () {
+                //context.drawImage(imageObj, 10, 10)//原始图片大小
+                context.drawImage(imageObj, 10, 10, 200, 300);//制定绘制图像的大小
+                context.drawImage(imageObj, 50, 40, 300, 450, 50, 50, 350, 450);
+            }
+
+            var x = canvas.width/2;
+            var y = canvas.height/2;
+/!*            context.font = "italic 40px Arial";
+             context.fillStyle = "#ff0000"
+             context.fillText("Hello Iotek!", x, y);*!/
+
+            context.moveTo(canvas.width/2, 0);
+            context.lineTo(canvas.width/2, canvas.height);
+            context.lineWidth = 5;
+            context.strokeStyle = "#ff0000"
+
+            context.stroke();
+
+
+
+            context.font = "italic 40px Arial";
+            context.strokeStyle = "#0000ff";
+            context.lineWidth = 2;//设置描边的宽度
+            context.strokeText("Hello Iotek!", x, y);
+
+            context.textAlign = "left"
+
+            var metrics = context.measureText("TDSJNKS");
+            var width = metrics.width;
+            context.font = "30px Arial"
+            context.textAlign = "center"
+            context.fillStyle = "#555"
+            context.fillText("(" + width + "px wide)", x, y+40)*/
+
+            var text = "sjdksj sjdsalkopsa9ews ioscksxsk skjsmxks sdnksks" +
+                "djnksmxksjncskx sjslxmlks scnsklcxzskd + " +
+                "jdsncksm djnksj sdjcjdsk " +
+                "jkdslskdsdknckls";
+            var maxWidth = 400;//每一行
+            var lineHeight = 25;//设置行之间的间隔
+            var x = (canvas.width - maxWidth) / 2;
+            var y = 60;
+            context.font = "16px Arial";
+            context.fillStyle = "#333";
+            wrapText(context, text, x, y, maxWidth, lineHeight)
+
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="578" height="700"></canvas>
+</body>
+</html>

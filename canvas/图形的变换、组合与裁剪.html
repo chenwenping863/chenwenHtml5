@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #myCanvas {
+            border: 1px solid #9c9898;
+            background-color: #77ffcc;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            var rectWidth = 150;
+            var rectHeight = 75;
+
+            context.fillStyle = "#ff0000";
+
+            //把坐标原点移动到canvas中心点
+            context.translate(canvas.width/2, canvas.height/2);
+
+            //顺时针 旋转 45
+            context.rotate(0.25*Math.PI)
+
+            //坐标在纵向缩小一半
+            context.scale(0.5, 0.5)
+
+            context.fillRect(-rectWidth/2, -rectHeight/2, rectWidth, rectHeight);
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+
+</body>
+</html>

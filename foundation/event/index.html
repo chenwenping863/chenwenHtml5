@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>runoob.com</title>
+</head>
+
+<body>
+<button onclick="getElementById('demo').innerHTML = Date()">现在的时间是？</button>
+<button onclick="this.innerHTML = Date()">现在的时间是？</button>
+<p id="demo"></p>
+
+<p>点击按钮执行 <em>displayDate()</em> 函数.</p>
+<button onclick="displayDate()">点这里</button>
+<script>
+    function displayDate() {
+        document.getElementById("demo1").innerHTML = Date();
+    }
+</script>
+<p id = "demo1"></p>
+
+<p id="demo3"></p>
+<script>
+    var x = 'It\'s alright';
+    var y = "He is called \"Johnny\"";
+    document.getElementById("demo3").innerHTML =
+        x + "<br>" + y;
+</script>
+
+<script>
+    var txt = "Hello World!";
+    document.write("<p>" + txt.length + "</p>");
+    var txt = "ANDJDNDKDMSKMCJDKSMCMSCJKDSKS";
+    document.write("<p>" + txt.length + "</p>")
+</script>
+
+<p id="demo5"></p>
+
+<script>
+    var x = "John";
+    var y = new String("John");
+    document.getElementById("demo5").innerHTML =
+        typeof x + " " + typeof y;
+    document.getElementById("demo5").innerHTML =
+        x===y;
+</script>
+
+<p>点击按钮计算x的值。</p>
+<button onclick="myFunct()">点击这里</button>
+<p id="demo11"></p>
+<script>
+    function myFunct()
+    {
+        y = 5;
+        m = 2;
+        x = y + m;
+        document.getElementsById("demo11").innerHTML = x;
+
+    }
+</script>
+
+<p>假设 y = 5, 计算 x = y + 2， 并显示结果。</p>
+<button onclick="myFu()">点击这里</button>
+<p id="demo22"></p>
+<script>
+    function myFu() {
+        var y = 5;
+        var x = y + 2;
+        var demoP = document.getElementById("demo22")
+        demoP.innerHTML = "x=" + x;
+    }
+</script>
+
+</body>
+</html>

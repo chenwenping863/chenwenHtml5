@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function myFunction() {
+            alert("Hello World!");
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="myFunction()">Try it</button>
+
+<p>点击这个按钮，来调用带参数的函数。</p>
+<button onclick="myFunction1('Harry Potter', 'Wizard')">点击这里</button>
+<button onclick="myFunction1('Bob','Builder')">点击这里</button>
+
+<script>
+    function myFunction1(name, job) {
+        alert("Welcome " + name + ", the" + job);
+
+    }
+</script>
+
+<button onclick="myFunction2(4, 3)">click</button>
+<div id="demo"></div>
+<script>
+    function myFunction2(a, b) {
+        return a*b;
+
+    }
+    document.getElementById("demo").innerHTML = myFunction2(4, 5);
+</script>
+
+<p>局部变量在声明的函数内不可访问。</p>
+<p id="demo3"></p>
+<script>
+    myFunction3();
+    document.getElementById("demo3").innerHTML =
+        "carName 的类型是:" + typeof carName;
+    function myFunction3() {
+        var carName = "chenwen";
+    }
+</script>
+
+<p>在HTML中， 所有全局变量都会成为window变量</p>
+<p id="demo11"></p>
+<script>
+    myFunc();
+    document.getElementById("demo11").innerHTML =
+        "我可以显示 " + window.carName;
+
+    function myFunc() {
+        carName = "Volvo";
+    }
+</script>
+
+</body>
+</html>

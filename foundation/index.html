@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>runoob.com</title>
+</head>
+
+<body>
+<p>
+    有两种方式可以访问对象的属性：
+</p>
+<p id="demo"></p>
+<p>创建和使用对象方法。</p>
+<p>对象方法作为一个函数定义存储在对象属性中。</p>
+<p id="demo1"></p>
+<script>
+    var person = {
+        fristName: "John",
+        lastName: "Doe",
+        id: 5566
+    };
+    document.getElementById("demo").innerHTML =
+        person["fristName"] + "  "  + person["lastName"];
+</script>
+
+<script>
+    var person = {
+        fristName : "John",
+        lastName : "Doe",
+        id : 5566,
+        fullName : function () {
+            return this.fristName + " " + this.lastName;
+        }
+    };
+    document.getElementById("demo1").innerHTML =
+        person.fullName();
+</script>
+</body>
+</html>
